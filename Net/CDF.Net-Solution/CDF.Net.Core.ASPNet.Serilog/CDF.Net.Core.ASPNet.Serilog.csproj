@@ -1,0 +1,37 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <ApplicationIcon />
+    <OutputType>Library</OutputType>
+    <StartupObject />
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <PackageProjectUrl>https://github.com/sgiffinlcd/CommonDeliveryFramework</PackageProjectUrl>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <RepositoryUrl>https://github.com/sgiffinlcd/CommonDeliveryFramework</RepositoryUrl>
+    <Product>Common Delivery Framework</Product>
+    <Authors>Stephen Giffin, John Hannah</Authors>
+    <Description>Software library that manages common delivery functions that are needed in software delivery projects.
+This library manages the integration of logging into asp.net core applications that uses the Serilog framework.
+</Description>
+    <Copyright>Copyright (c) 2019 Stephen Giffin and John Hannah</Copyright>
+    <PackageTags>Logging, ASPNetCore, Serilog, Microsoft.Extensions.Logging</PackageTags>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <IsPackable>true</IsPackable>
+    <Version>1.0.1</Version>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Serilog" Version="2.9.0" />
+    <PackageReference Include="Serilog.AspNetCore" Version="3.2.0" />
+    <PackageReference Include="Serilog.Extensions.Logging" Version="3.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\..\..\LICENSE">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
+
+</Project>
