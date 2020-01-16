@@ -14,16 +14,18 @@
     <Description>Software library that manages common delivery functions that are needed in software delivery projects.
 This library manages the integration of logging into asp.net core applications that uses the Serilog framework.
 </Description>
-    <Copyright>Copyright (c) 2019 Stephen Giffin and John Hannah</Copyright>
+    <Copyright>Copyright (c) 2020 Stephen Giffin and John Hannah</Copyright>
     <PackageTags>Logging, ASPNetCore, Serilog, Microsoft.Extensions.Logging</PackageTags>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <IsPackable>true</IsPackable>
-    <Version>1.0.1</Version>
+    <Version>1.0.2</Version>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Serilog" Version="2.9.0" />
     <PackageReference Include="Serilog.AspNetCore" Version="3.2.0" />
+    <PackageReference Include="Serilog.Enrichers.Environment" Version="2.1.3" />
+    <PackageReference Include="Serilog.Enrichers.Thread" Version="3.1.0" />
     <PackageReference Include="Serilog.Extensions.Logging" Version="3.0.1" />
   </ItemGroup>
 

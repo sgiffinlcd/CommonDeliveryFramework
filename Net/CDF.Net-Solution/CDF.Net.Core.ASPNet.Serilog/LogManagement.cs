@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Hosting;
+﻿using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Hosting;
 using Serilog.Extensions.Logging;
 using Serilog;
 
@@ -19,12 +20,29 @@ namespace CDF.Net.Core.ASPNet.Serilog
         /// </summary>
         /// <param name="builder">The web host builder that the logging will be hosted in.</param>
         /// <returns>Reference to the web host builder that utilities logging has been added.</returns>
-        public static IWebHostBuilder UseCDFLogging(this IWebHostBuilder builder)
+        public static IWebHostBuilder UseCDFLogging(this IWebHostBuilder builder,bool logMachineName = true,bool logThreadId = false, bool logThreadName = false)
         {
-            return builder.UseSerilog((hostingContext, loggerConfiguration) => loggerConfiguration
-                .ReadFrom.Configuration(hostingContext.Configuration)
-                .Enrich.FromLogContext()
-                .WriteTo.Providers(SerilogProviders));
+            return builder.UseSerilog((hostingContext, loggerConfiguration) =>
+            {
+                loggerConfiguration.ReadFrom.Configuration(hostingContext.Configuration);
+                if (logMachineName) loggerConfiguration.Enrich.WithMachineName();
+                if (logThreadId) loggerConfiguration.Enrich.WithThreadId();
+                if (logThreadName) loggerConfiguration.Enrich.WithThreadName();
+                loggerConfiguration.Enrich.FromLogContext().WriteTo.Providers(SerilogProviders);
+
+            });
+
+        }
+
+        /// <summary>
+        /// Registers the user name property to be added to logging
+        /// </summary>
+        /// <param name="builder">Application builder to register the middleware with.</param>
+        /// <returns>The application builder</returns>
+        public static IApplicationBuilder UseUserNameLoggerProperty(
+            this IApplicationBuilder builder)
+        {
+            return builder.UseMiddleware<UserNameMiddleWare>();
         }
     }
 }
