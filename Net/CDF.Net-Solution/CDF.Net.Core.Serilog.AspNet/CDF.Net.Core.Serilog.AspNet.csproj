@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
@@ -11,15 +11,27 @@
     <RepositoryUrl>https://github.com/sgiffinlcd/CommonDeliveryFramework</RepositoryUrl>
     <Product>Common Delivery Framework</Product>
     <Authors>Stephen Giffin, John Hannah</Authors>
-    <Description>Software library that manages common delivery functions that are needed in software delivery projects.
-This library manages the integration of logging into asp.net core applications that uses the Serilog framework.
-</Description>
+    <Description>
+      Software library that manages common delivery functions that are needed in software delivery projects.
+      This library manages the integration of logging into asp.net core applications that uses the Serilog framework.
+    </Description>
     <Copyright>Copyright (c) 2020 Stephen Giffin and John Hannah</Copyright>
     <PackageTags>Logging, ASPNetCore, Serilog, Microsoft.Extensions.Logging, CDF</PackageTags>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <IsPackable>true</IsPackable>
-    <Version>1.0.2</Version>
+    <Version>1.1.0</Version>
   </PropertyGroup>
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\..\..\LICENSE" Link="LICENSE">
+      <PackagePath></PackagePath>
+      <Pack>True</Pack>
+    </None>
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Serilog" Version="2.9.0" />
@@ -27,13 +39,6 @@ This library manages the integration of logging into asp.net core applications t
     <PackageReference Include="Serilog.Enrichers.Environment" Version="2.1.3" />
     <PackageReference Include="Serilog.Enrichers.Thread" Version="3.1.0" />
     <PackageReference Include="Serilog.Extensions.Logging" Version="3.0.1" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Include="..\..\..\LICENSE">
-      <Pack>True</Pack>
-      <PackagePath></PackagePath>
-    </None>
   </ItemGroup>
 
 </Project>

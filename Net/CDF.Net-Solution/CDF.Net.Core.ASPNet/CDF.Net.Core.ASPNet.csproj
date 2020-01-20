@@ -17,7 +17,7 @@ This library manages the integration of logging into asp.net core applications. 
     <PackageTags>Exception Management, Web API, ASPNetCore</PackageTags>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <IsPackable>true</IsPackable>
-    <Version>1.0.1</Version>
+    <Version>1.1.0</Version>
   </PropertyGroup>
 
   <ItemGroup>
